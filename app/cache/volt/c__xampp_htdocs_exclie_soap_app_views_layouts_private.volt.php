@@ -217,8 +217,8 @@
               </a>
             </li>
             <li>
-              <a href="../mailbox/mailbox.html">
-                <i class="fa fa-envelope"></i> <span>Mailbox</span>
+              <a href="<?php echo $this->url->get('pacientes'); ?>">
+                <i class="fa fa-user"></i> <span>Pacientes</span>
                 <small class="label pull-right bg-yellow">12</small>
               </a>
             </li>
@@ -275,6 +275,10 @@
     <?php echo $this->tag->javascriptInclude('public/bootstrap-material/dist/js/ripples.js'); ?>
     <!-- Bootstrap 3.3.5 -->
     <script src="public/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+    <!-- InputMask -->
+    <script src="public/AdminLTE/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="public/AdminLTE/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="public/AdminLTE/plugins/input-mask/jquery.inputmask.extensions.js"></script>
     <!-- SlimScroll -->
     <script src="public/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <!-- FastClick -->

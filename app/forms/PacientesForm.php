@@ -1,4 +1,5 @@
 <?php
+namespace Vokuro\Forms;
 
 use Phalcon\Forms\Form,
 	Phalcon\Forms\Element\Text,
@@ -6,11 +7,20 @@ use Phalcon\Forms\Form,
     Phalcon\Forms\Element\Check,
     Phalcon\Forms\Element\Select,
     Phalcon\Validation\Validator\PresenceOf,
-    Phalcon\Validation\Validator\Email;
+    Phalcon\Validation\Validator\Email,
+    Vokuro\Models\Estados,
+    Vokuro\Models\Municipios,
+    Vokuro\Models\Dependencias,
+    Vokuro\Models\Discapacidades,
+    Vokuro\Models\nivelessocioeconomicos,
+    Vokuro\Models\Religiones,
+    Vokuro\Models\Viviendas,
+    Vokuro\Models\Gruposetnicos,
+    Vokuro\Models\Tipossanguineos;
 
 class PacientesForm extends Form
 {
-    public function initialize()
+    public function initialize($entity = null, $options = null)
     {
         $email = new Emailfield('email', array(
             'placeholder' => 'Ingrese e-mail válido'

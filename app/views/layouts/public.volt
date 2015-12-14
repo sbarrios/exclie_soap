@@ -5,13 +5,15 @@
         <meta charset="UTF-8">
         {{ get_title() }}
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <!-- Estilos  -->
+        {{ stylesheet_link('public/css/login.css') }}
         <!-- bootstrap 3.0.2 -->
         {{ stylesheet_link('public/AdminLTE/bootstrap/css/bootstrap.min.css') }}
         <!-- font Awesome -->
         {{ stylesheet_link('public/font-awesome-4.5.0/css/font-awesome.min.css') }}
         
         <!-- Theme style -->
-        {{ stylesheet_link('public/AdminLTE/dist/css/AdminLTE.min.css') }}
+        <!-- {{ stylesheet_link('public/AdminLTE/dist/css/AdminLTE.min.css') }} -->
         <!-- Material Design  -->
         {{ stylesheet_link("public/bootstrap-material/dist/css/material-wfont.min.css") }}
         {{ stylesheet_link("public/bootstrap-material/dist/css/ripples.min.css") }}
@@ -23,7 +25,7 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body class="bg-black">
+    <body>
 
         {{ content() }}
 

@@ -5,13 +5,15 @@
         <meta charset="UTF-8">
         <?php echo $this->tag->getTitle(); ?>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <!-- Estilos  -->
+        <?php echo $this->tag->stylesheetLink('public/css/login.css'); ?>
         <!-- bootstrap 3.0.2 -->
         <?php echo $this->tag->stylesheetLink('public/AdminLTE/bootstrap/css/bootstrap.min.css'); ?>
         <!-- font Awesome -->
         <?php echo $this->tag->stylesheetLink('public/font-awesome-4.5.0/css/font-awesome.min.css'); ?>
         
         <!-- Theme style -->
-        <?php echo $this->tag->stylesheetLink('public/AdminLTE/dist/css/AdminLTE.min.css'); ?>
+        <!-- <?php echo $this->tag->stylesheetLink('public/AdminLTE/dist/css/AdminLTE.min.css'); ?> -->
         <!-- Material Design  -->
         <?php echo $this->tag->stylesheetLink('public/bootstrap-material/dist/css/material-wfont.min.css'); ?>
         <?php echo $this->tag->stylesheetLink('public/bootstrap-material/dist/css/ripples.min.css'); ?>
@@ -23,7 +25,7 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body class="bg-black">
+    <body>
 
         <?php echo $this->getContent(); ?>
 

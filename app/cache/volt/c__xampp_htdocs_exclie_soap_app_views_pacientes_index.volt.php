@@ -29,130 +29,130 @@
                 <div class="row">
                     <div class="form-group col-md-3">
                     <label for="nombre">Nombre</label>
-                        {{ form.label('nombre',['class': 'control-label']) }}
-                        {{ form.render('nombre', ['class': 'form-control']) }} 
+                        <?php echo $form->label('nombre', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('nombre', array('class' => 'form-control')); ?> 
                     </div>
                     <div class="form-group col-md-3">
-                        {{ form.label('apellido_paterno',['class': 'control-label']) }}
-                        {{ form.render('apellido_paterno', ['class': 'form-control']) }}
+                        <?php echo $form->label('apellido_paterno', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('apellido_paterno', array('class' => 'form-control')); ?>
                     </div>
                     <div class="form-group col-md-3">
-                        {{ form.label('apellido_materno',['class': 'control-label']) }}
-                        {{ form.render('apellido_materno', ['class': 'form-control']) }}
+                        <?php echo $form->label('apellido_materno', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('apellido_materno', array('class' => 'form-control')); ?>
                     </div>
                     <div class="form-group col-md-3">
                         <div id="gender" >
-                            {{ form.label('Sexo',['class': 'control-label']) }}
-                            {{ form.render('Sexo', ['class': 'form-control']) }}
+                            <?php echo $form->label('Sexo', array('class' => 'control-label')); ?>
+                            <?php echo $form->render('Sexo', array('class' => 'form-control')); ?>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-3">
-                        {{ form.label('fecha_nacimiento',['class': 'control-label']) }}
-                        {{ form.render('fecha_nacimiento', ['class': 'form-control','data-inputmask': "'alias':'dd/mm/yyyy'"]) }}
+                        <?php echo $form->label('fecha_nacimiento', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('fecha_nacimiento', array('class' => 'form-control', 'data-inputmask' => '\'alias\':\'dd/mm/yyyy\'')); ?>
                     </div>
                     <div class="form-group col-md-3">
-                        {{ form.label('ocupacion',['class': 'control-label']) }}
-                        {{ form.render('ocupacion', ['class': 'form-control']) }}
+                        <?php echo $form->label('ocupacion', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('ocupacion', array('class' => 'form-control')); ?>
                     </div>
                     <div class="form-group col-md-3">
-                        {{ form.label('telefono',['class': 'control-label']) }}
-                        {{ form.render('telefono', ['class': 'form-control','data-inputmask': "'mask':'(999) - 999 - 99 - 99'"]) }}
+                        <?php echo $form->label('telefono', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('telefono', array('class' => 'form-control', 'data-inputmask' => '\'mask\':\'(999) - 999 - 99 - 99\'')); ?>
                     </div>
                     <div class="form-group col-md-3">
                         <div id="edo_civil" >
-                            {{ form.label('Estado Civil',['class': 'control-label']) }}
-                            {{ form.render('Estado Civil', ['class': 'form-control ']) }}
+                            <?php echo $form->label('Estado Civil', array('class' => 'control-label')); ?>
+                            <?php echo $form->render('Estado Civil', array('class' => 'form-control ')); ?>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form group col-md-3">
-                        {{ form.label('calle',['class': 'control-label']) }}
-                        {{ form.render('calle', ['class': 'form-control ']) }}
+                        <?php echo $form->label('calle', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('calle', array('class' => 'form-control ')); ?>
                     </div>
                     <div class="form group col-md-3">
-                        {{ form.label('numero_ext',['class': 'control-label']) }}
-                        {{ form.render('numero_ext', ['class': 'form-control ']) }}
+                        <?php echo $form->label('numero_ext', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('numero_ext', array('class' => 'form-control ')); ?>
                     </div>
                     <div class="form group col-md-3">
-                        {{ form.label('numero_int',['class': 'control-label']) }}
-                        {{ form.render('numero_int', ['class': 'form-control ']) }}
+                        <?php echo $form->label('numero_int', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('numero_int', array('class' => 'form-control ')); ?>
                     </div>
                     <div class="form group col-md-3">
-                        {{ form.label('colonia',['class': 'control-label']) }}
-                        {{ form.render('colonia', ['class': 'form-control ']) }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form group col-md-3">
-                        {{ form.label('codigo_postal',['class': 'control-label']) }}
-                        {{ form.render('codigo_postal', ['class': 'form-control ']) }}
-                    </div>
-                    <div class="form group col-md-3">
-                        {{ form.label('Estados',['class': 'control-label']) }}
-                        {{ form.render('Estados', ['class': 'form-control']) }}
-                    </div>
-                    <div class="form group col-md-3">
-                        {{ form.label('Municipios',['class': 'control-label']) }}
-                        {{ form.render('Municipios', ['class': 'form-control ']) }}
-                    </div>
-                    <div class="form group col-md-3">
-                        {{ form.label('email',['class': 'control-label']) }}
-                        {{ form.render('email', ['class': 'form-control ']) }}
+                        <?php echo $form->label('colonia', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('colonia', array('class' => 'form-control ')); ?>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form group col-md-3">
-                        {{ form.label('curp',['class': 'control-label']) }}
-                        {{ form.render('curp', ['class': 'form-control ']) }}
+                        <?php echo $form->label('codigo_postal', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('codigo_postal', array('class' => 'form-control ')); ?>
                     </div>
                     <div class="form group col-md-3">
-                        {{ form.label('rfc',['class': 'control-label']) }}
-                        {{ form.render('rfc', ['class': 'form-control ']) }}
+                        <?php echo $form->label('Estados', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('Estados', array('class' => 'form-control')); ?>
                     </div>
                     <div class="form group col-md-3">
-                        {{ form.label('referido',['class': 'control-label']) }}
-                        {{ form.render('referido', ['class': 'form-control ']) }}
+                        <?php echo $form->label('Municipios', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('Municipios', array('class' => 'form-control ')); ?>
+                    </div>
+                    <div class="form group col-md-3">
+                        <?php echo $form->label('email', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('email', array('class' => 'form-control ')); ?>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form group col-md-3">
+                        <?php echo $form->label('curp', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('curp', array('class' => 'form-control ')); ?>
+                    </div>
+                    <div class="form group col-md-3">
+                        <?php echo $form->label('rfc', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('rfc', array('class' => 'form-control ')); ?>
+                    </div>
+                    <div class="form group col-md-3">
+                        <?php echo $form->label('referido', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('referido', array('class' => 'form-control ')); ?>
                     </div>
                     
                 </div>
                 <br><hr>
                 <div class="row">
                     <div class="form group col-md-3">
-                        {{ form.label('Niveles Socioeconomicos',['class': 'control-label']) }}
-                        {{ form.render('Niveles Socioeconomicos', ['class': 'form-control ']) }}
+                        <?php echo $form->label('Niveles Socioeconomicos', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('Niveles Socioeconomicos', array('class' => 'form-control ')); ?>
                     </div>
                     <div class="form group col-md-3">
-                        {{ form.label('Religiones',['class': 'control-label']) }}
-                        {{ form.render('Religiones', ['class': 'form-control ']) }}
+                        <?php echo $form->label('Religiones', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('Religiones', array('class' => 'form-control ')); ?>
                     </div>
                     <div class="form group col-md-3">
-                        {{ form.label('Discapacidades',['class': 'control-label']) }}
-                        {{ form.render('Discapacidades', ['class': 'form-control ']) }}
+                        <?php echo $form->label('Discapacidades', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('Discapacidades', array('class' => 'form-control ')); ?>
                     </div>
                     <div class="form group col-md-3">
-                        {{ form.label('Grupos Etnicos',['class': 'control-label']) }}
-                        {{ form.render('Grupos Etnicos', ['class': 'form-control ']) }}
+                        <?php echo $form->label('Grupos Etnicos', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('Grupos Etnicos', array('class' => 'form-control ')); ?>
                     </div>
                     
                 </div>
                 <div class="row">
                     <div class="form group col-md-3">
-                        {{ form.label('Tipo Sangre',['class': 'control-label']) }}
-                        {{ form.render('Tipo Sangre', ['class': 'form-control ']) }}
+                        <?php echo $form->label('Tipo Sangre', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('Tipo Sangre', array('class' => 'form-control ')); ?>
                     </div>
                     <div class="form group col-md-3">
-                        {{ form.label('Vivienda',['class': 'control-label']) }}
-                        {{ form.render('Vivienda', ['class': 'form-control ']) }}
+                        <?php echo $form->label('Vivienda', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('Vivienda', array('class' => 'form-control ')); ?>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
                     <div class="form group col-sm-3">
-                        {{ form.label('Dependencia',['class': 'control-label']) }}
-                        {{ form.render('Dependencia', ['class': 'form-control ']) }}
+                        <?php echo $form->label('Dependencia', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('Dependencia', array('class' => 'form-control ')); ?>
                     </div>
                     <div class="form group col-sm-3">
                         <label># de Afiliación</label>
@@ -163,26 +163,26 @@
                 <div class="row">
                     <h3>Contacto Emergencia: </h3>
                     <div class="form group col-md-3">
-                        {{ form.label('nombre_c',['class': 'control-label']) }}
-                        {{ form.render('nombre_c', ['class': 'form-control ']) }}
+                        <?php echo $form->label('nombre_c', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('nombre_c', array('class' => 'form-control ')); ?>
                     </div>
                     <div class="form group col-md-3">
-                        {{ form.label('apellidopaternoc',['class': 'control-label']) }}
-                        {{ form.render('apellidopaternoc', ['class': 'form-control ']) }}
+                        <?php echo $form->label('apellidopaternoc', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('apellidopaternoc', array('class' => 'form-control ')); ?>
                     </div>
                     <div class="form group col-md-3">
-                        {{ form.label('apellidomaternoc',['class': 'control-label']) }}
-                        {{ form.render('apellidomaternoc', ['class': 'form-control ']) }}
+                        <?php echo $form->label('apellidomaternoc', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('apellidomaternoc', array('class' => 'form-control ')); ?>
                     </div>
                     <div class="form group col-md-3">
-                        {{ form.label('direccionc',['class': 'control-label']) }}
-                        {{ form.render('direccionc', ['class': 'form-control ']) }}
+                        <?php echo $form->label('direccionc', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('direccionc', array('class' => 'form-control ')); ?>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
-                        {{ form.label('telefonoc',['class': 'control-label']) }}
-                        {{ form.render('telefonoc', ['class': 'form-control','data-inputmask': "'mask':'(999) - 999 - 99 - 99'"]) }}
+                        <?php echo $form->label('telefonoc', array('class' => 'control-label')); ?>
+                        <?php echo $form->render('telefonoc', array('class' => 'form-control', 'data-inputmask' => '\'mask\':\'(999) - 999 - 99 - 99\'')); ?>
                         
                     </div>
                 </div>
@@ -211,9 +211,9 @@
     </div>
 </div>
 <!-- wizard -->
-{{ javascript_include('public/Smart-Wizard/js/jquery.smartWizard.js') }}
+<?php echo $this->tag->javascriptInclude('public/Smart-Wizard/js/jquery.smartWizard.js'); ?>
 <!-- DropZone -->
-<!-- {{ javascript_include('public/Smart-Wizard/js/dropzone/dropzone.js') }} -->
+<!-- <?php echo $this->tag->javascriptInclude('public/Smart-Wizard/js/dropzone/dropzone.js'); ?> -->
 
         
 

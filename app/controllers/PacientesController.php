@@ -1,10 +1,12 @@
 <?php
 namespace Vokuro\Controllers;
 
+use Vokuro\Forms\PacientesForm;
+
 /**
  * Display the default index page.
  */
-class PacientesController extends ControllerBase
+class PacientesController extends \Phalcon\Mvc\Controller
 {
 	public function initialize()
     {
@@ -24,7 +26,9 @@ class PacientesController extends ControllerBase
     }
    
     public function indexAction()
-    {
+    {   
+        $this->persistent->conditions = null;
+        $this->view->form = new PacientesForm();
         
     }
 }
