@@ -10,7 +10,7 @@
     <?php echo $this->tag->stylesheetLink('public/css/estilos.css'); ?>
      <!-- FullCalendar 2.4 -->
     <?php echo $this->tag->stylesheetLink('public/fullcalendar-2.4.0/fullcalendar.css'); ?>
-    <!-- <?php echo $this->tag->stylesheetLink('public/fullcalendar-2.4.0/fullcalendar.print.css'); ?> -->
+    
     <!-- Bootstrap 3.3.5 -->
     <?php echo $this->tag->stylesheetLink('public/AdminLTE/bootstrap/css/bootstrap.min.css'); ?>
     <!-- Font Awesome -->
@@ -24,7 +24,7 @@
     <?php echo $this->tag->stylesheetLink('public/AdminLTE/dist/css/skins/_all-skins.min.css'); ?>
     
     <!-- Material Design  -->
-<!-- <?php echo $this->tag->stylesheetLink('public/bootstrap-material/dist/css/material-wfont.min.css'); ?> -->
+    <!-- <?php echo $this->tag->stylesheetLink('public/bootstrap-material/dist/css/material-wfont.min.css'); ?> -->
     <?php echo $this->tag->stylesheetLink('public/bootstrap-material/dist/css/ripples.min.css'); ?>
    
     <!-- jQuery 2.1.4 -->

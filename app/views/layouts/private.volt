@@ -10,7 +10,7 @@
     {{ stylesheet_link('public/css/estilos.css') }}
      <!-- FullCalendar 2.4 -->
     {{ stylesheet_link('public/fullcalendar-2.4.0/fullcalendar.css') }}
-    <!-- {{ stylesheet_link('public/fullcalendar-2.4.0/fullcalendar.print.css') }} -->
+    
     <!-- Bootstrap 3.3.5 -->
     {{ stylesheet_link('public/AdminLTE/bootstrap/css/bootstrap.min.css') }}
     <!-- Font Awesome -->
@@ -24,7 +24,7 @@
     {{ stylesheet_link('public/AdminLTE/dist/css/skins/_all-skins.min.css') }}
     
     <!-- Material Design  -->
-<!-- {{ stylesheet_link("public/bootstrap-material/dist/css/material-wfont.min.css") }} -->
+    <!-- {{ stylesheet_link("public/bootstrap-material/dist/css/material-wfont.min.css") }} -->
     {{ stylesheet_link("public/bootstrap-material/dist/css/ripples.min.css") }}
    
     <!-- jQuery 2.1.4 -->

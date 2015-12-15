@@ -1,4 +1,4 @@
-
+{{ stylesheet_link('public/downloads/css/dropzone.css') }}
 <div id="wizard" class="form_wizard wizard_horizontal">
     <ul class="wizard_steps">
         <li>
@@ -9,15 +9,14 @@
         </li>
         <li>
             <a href="#step-2">
-                <span class="step_no">2</span>
-                <span class="step_descr">Paso 2<br /><small>Antecedentes</small></span>
+                <span class="step_no">3</span>
+                <span class="step_descr">Paso 3<br /><small>Añadir Foto</small></span>
             </a>
         </li>
          <li>
             <a href="#step-3">
-                <span class="step_no">3</span>
-                <span class="step_descr">Paso 3<br /><small>Añadir Foto</small>
-    </span>
+                <span class="step_no">2</span>
+                <span class="step_descr">Paso 2<br /><small>Antecedentes</small></span>
             </a>
         </li>
     </ul>
@@ -191,29 +190,36 @@
         </div>
     </div>
     <div id="step-2">
-        <br>
-        <h2>Antecedentes</h2>
-        <form id="pacForm2" class="form-horizontal form-label-left">
-        <div class="row">
-            <div class="form group col-md-4">
-                <div class="togglebutton">
-                    <label>
-                        <input type="checkbox" checked=""> Toggle button
-                    </label>
+        <div class="col-md-12">
+           <br>
+            <h2>Añadir Foto</h2>
+            <form action="pacientes/foto" class="dropzone" style="border: 1px solid #e5e5e5; height: 300px; " id="pacForm2">
+                <div class="fallback">
+                    <input name="file" type="file" multiple />
                 </div>
-            </div>
+            </form> 
         </div>
     </div>
     <div id="step-3">
         <br>
-        <h2>Añadir Foto</h2>
-        <form action="pacientes/foto" class="dropzone" style="border: 1px solid #e5e5e5; height: 300px; " id="pacForm3"></form>
+        <h2>Antecedentes</h2>
+        <form id="pacForm3" class="form-horizontal form-label-left">
+            <div class="row">
+                <div class="form group col-md-4">
+                    <div class="togglebutton">
+                        <label>
+                            <input type="checkbox" checked=""> Toggle button
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 <!-- wizard -->
 {{ javascript_include('public/Smart-Wizard/js/jquery.smartWizard.js') }}
 <!-- DropZone -->
-<!-- {{ javascript_include('public/Smart-Wizard/js/dropzone/dropzone.js') }} -->
+{{ javascript_include('public/downloads/dropzone.js') }} 
 
         
 
@@ -233,7 +239,7 @@
                 var formData = $("#pacForm").serialize();
                 var formData2 = $("#pacForm2").serialize();
                 console.log(formData);
-                console.log(formData2);
+                console.log('Forma 2 '+formData2);
             }
 
             // Smart Wizard 
@@ -246,28 +252,25 @@
            $("#Estados").change(function(event){
                 var value = $(this).val();
                 var getResultsUrl = 'pacientes/search';    
-
+                console.log(value);
                 $.ajax({
                     type: "POST",
                     url: getResultsUrl,
-                    data: {"Estados": value},
+                    data: {"estado_id": value},
                     success: function(response){                    
                         $("#Municipios").empty();
                         parsed = $.parseJSON(response);
                         $.each(parsed, function(){
                            $("#Municipios").append('<option value="'+ this.ID +'">'+ this.NOMBRE +'</option>');
-                        });                 
+                        });  
+                        console.log(response);               
                     }
                 });
             });
 
         });
 
-
-
-  
-
-        
+   
     
     </script>
 
