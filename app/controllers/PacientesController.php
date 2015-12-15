@@ -9,7 +9,7 @@ use Phalcon\Mvc\Model\Criteria;
 /**
  * Display the default index page.
  */
-class PacientesController extends \Phalcon\Mvc\Controller
+class PacientesController extends ControllerBase
 {
 	public function initialize()
     {
@@ -30,6 +30,7 @@ class PacientesController extends \Phalcon\Mvc\Controller
    
     public function indexAction()
     {   
+       
         $this->persistent->conditions = null;
         $this->view->form = new PacientesForm();
         
