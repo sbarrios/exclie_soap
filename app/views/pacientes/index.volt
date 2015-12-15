@@ -268,9 +268,25 @@
                 });
             });
 
+
+
         });
 
-   
+        function irAntes(data) {
+            var datos = {idPac:data};
+            $.ajax({
+                    type: "POST",
+                    url: "<?php echo $this->basePath() ?>/pacientes/antecedentes",
+                     data: datos,
+                    dataType: "html",
+                    success: function(data) {
+                       $("#step2").html(data);   
+                    },
+                    error: function(){
+                          alert('Ocurrió un error, inténtelo más tarde.');
+                    }
+            });
+        }
     
     </script>
 
