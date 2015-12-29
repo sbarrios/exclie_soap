@@ -7,7 +7,6 @@ use Phalcon\Mvc\View;
 use Phalcon\Paginator\Adapter\Model as Paginator;
 use Vokuro\Forms\ChangePasswordForm;
 use Vokuro\Forms\UsersForm;
-use Vokuro\Models\Users;
 use Vokuro\Models\PasswordChanges;
 
 /**
@@ -83,7 +82,7 @@ class UsersController extends ControllerBase
      */
     public function createAction()
     {
-        $this->view->disableLevel(View::LEVEL_MAIN_LAYOUT);
+        //$this->view->disableLevel(View::LEVEL_MAIN_LAYOUT);
         if ($this->request->isPost()) {
 
             $user = new Users();

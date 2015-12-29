@@ -1,3 +1,5 @@
+<h1>Pacientes</h1>
+
 <div id="wizard" class="form_wizard wizard_horizontal">
     <ul class="wizard_steps">
         <li>
@@ -8,17 +10,18 @@
         </li>
         <li>
             <a href="#step-2">
-                <span class="step_no">2</span>
-                <span class="step_descr">Paso 2<br /><small>Añadir Foto</small></span>
+                <span class="step_no">3</span>
+                <span class="step_descr">Paso 3<br /><small>Añadir Foto</small></span>
             </a>
         </li>
          <li>
             <a href="#step-3">
-                <span class="step_no">3</span>
-                <span class="step_descr">Paso 3<br /><small>Antecedentes</small></span>
+                <span class="step_no">2</span>
+                <span class="step_descr">Paso 2<br /><small>Antecedentes</small></span>
             </a>
         </li>
     </ul>
+    
     <div id="step-1">
         <div class="col-md-12">
             <form method="post" id="pacForm">
@@ -27,7 +30,7 @@
                     <div class="form-group col-md-3">
                     
                         {{ form.label('nombre',['class': 'control-label']) }}
-                        {{ form.render("nombre", ['class': 'form-control']) }}
+                        {{ form.render("nombre") }}
                         
                     </div>
                     <div class="form-group col-md-3">
@@ -45,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+               <!--  <div class="row">
                     <div class="form-group col-md-3">
                         {{ form.label('fecha_nacimiento',['class': 'control-label']) }}
                         {{ form.render('fecha_nacimiento', ['class': 'form-control','data-inputmask': "'alias':'dd/mm/yyyy'"]) }}
@@ -183,7 +186,7 @@
                         {{ form.render('telefonoc', ['class': 'form-control','data-inputmask': "'mask':'(999) - 999 - 99 - 99'"]) }}
                         
                     </div>
-                </div>
+                </div> -->
             </form>
            
         </div>
@@ -215,57 +218,78 @@
         </form>
     </div>
 </div>
-
 <!-- wizard -->
-{{ javascript_include('public/Smart-Wizard/js/jquery.smartWizard.js') }}
+<!-- {{ javascript_include('public/Smart-Wizard/js/jquery.smartWizard.js') }} -->
 <!-- DropZone -->
 {{ javascript_include('public/downloads/dropzone.js') }} 
 
-<script>
-        $(document).ready(function () {
-            // Smart Wizard     
-            $('#wizard').smartWizard({ 
-                labelNext:'Siguiente',
-                labelPrevious:'Atrás',
-                labelFinish:'Terminar',
-                hideButtonsOnDisabled: true,
-                onFinish: onFinishCallback
-            });
+        
 
-            function onFinishCallback() {
-                $('#wizard').smartWizard('showMessage', 'Finish Clicked');
-                var formData = $("#pacForm").serialize();
-                var formData2 = $("#pacForm2").serialize();
-                console.log(formData);
-                console.log('Forma 2 '+formData2);
-            }
+    <script type="text/javascript">
+        // $(document).ready(function () {
+        //     // Smart Wizard     
+        //     $('#wizard').smartWizard({ 
+        //         labelNext:'Siguiente',
+        //         labelPrevious:'Atrás',
+        //         labelFinish:'Terminar',
+        //         hideButtonsOnDisabled: true,
+        //         onFinish:onFinishCallback
+        //     });
 
-            $('#wizard_verticle').smartWizard({
-                transitionEffect: 'slide'
-            });
+        //     function onFinishCallback() {
+        //         $('#wizard').smartWizard('showMessage', 'Finish Clicked');
+        //         var formData = $("#pacForm").serialize();
+        //         var formData2 = $("#pacForm2").serialize();
+        //         console.log(formData);
+        //         console.log('Forma 2 '+formData2);
+        //     }
 
-            $(":input").inputmask();
+        //     // Smart Wizard 
+        //     $('#wizard_verticle').smartWizard({
+        //         transitionEffect: 'slide'
+        //     });
+        //     // Mascaras
+        //     $(":input").inputmask();
 
-            $("#Estados").change(function(event){
-                var value = $(this).val();
-                var getResultsUrl = 'pacientes/search';    
-                $.ajax({
-                    type: "POST",
-                    url: getResultsUrl,
-                    data: {"estado_id": value},
-                   
-                    success: function(data){      
-                        //console.log(response);               
-                        $("#Municipios").empty();
-                        parsed = $.parseJSON(data);
-                        $.each(parsed, function(){
-                           $("#Municipios").append('<option value="'+ this.ID +'">'+ this.NOMBRE +'</option>');
-                        });  
-                                      
-                    }
-                });
-            });
+        //    $("#Estados").change(function(event){
+        //         var value = $(this).val();
+        //         var getResultsUrl = 'pacientes/search';    
+        //         console.log(value);
+        //         $.ajax({
+        //             type: "POST",
+        //             url: getResultsUrl,
+        //             data: {"estado_id": value},
+        //             success: function(response){                    
+        //                 $("#Municipios").empty();
+        //                 parsed = $.parseJSON(response);
+        //                 $.each(parsed, function(){
+        //                    $("#Municipios").append('<option value="'+ this.ID +'">'+ this.NOMBRE +'</option>');
+        //                 });  
+        //                 console.log(response);               
+        //             }
+        //         });
+        //     });
 
-        });
 
+
+        // });
+
+        // function irAntes(data) {
+        //     var datos = {idPac:data};
+        //     $.ajax({
+        //             type: "POST",
+        //             url: "<?php echo $this->basePath() ?>/pacientes/antecedentes",
+        //              data: datos,
+        //             dataType: "html",
+        //             success: function(data) {
+        //                $("#step2").html(data);   
+        //             },
+        //             error: function(){
+        //                   alert('Ocurrió un error, inténtelo más tarde.');
+        //             }
+        //     });
+        // }
+    
     </script>
+
+       

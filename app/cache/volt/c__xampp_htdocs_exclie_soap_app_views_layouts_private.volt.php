@@ -48,7 +48,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo $this->url->get('index'); ?>" class="logo">
+        <a href="<?php echo $this->url->get('inicio'); ?>" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><i class="fa fa-medkit"></i></span>
           <!-- logo for regular state and mobile devices -->
@@ -209,7 +209,7 @@
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
+            <li class="header">MENU PRINCIPAL</li>
             <li>
               <a href="<?php echo $this->url->get('agenda'); ?>">
                 <i class="fa fa-calendar"></i> <span>Agenda</span>
@@ -269,7 +269,6 @@
       
     </div><!-- ./wrapper -->
 
-    
     <!-- Material Design -->
     <?php echo $this->tag->javascriptInclude('public/bootstrap-material/dist/js/material.min.js'); ?>
     <?php echo $this->tag->javascriptInclude('public/bootstrap-material/dist/js/ripples.js'); ?>
@@ -288,7 +287,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="public/AdminLTE/dist/js/demo.js"></script>
   </body>
-  <script type="text/javascript">
+  <script>
         $(function() {
                  $.material.init();
         });                

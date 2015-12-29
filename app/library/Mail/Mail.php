@@ -15,7 +15,7 @@ class Mail extends Component
 
     protected $transport;
 
-    protected $amazonSes;
+    //protected $amazonSes;
 
     protected $directSmtp = false;
 
@@ -24,31 +24,31 @@ class Mail extends Component
      *
      * @param string $raw
      */
-    private function amazonSESSend($raw)
-    {
-        if ($this->amazonSes == null) {
-            $this->amazonSes = new \AmazonSES(
-                $this->config->amazon->AWSAccessKeyId,
-                $this->config->amazon->AWSSecretKey
-            );
-            $this->amazonSes->disable_ssl_verification();
-        }
+    // private function amazonSESSend($raw)
+    // {
+    //     if ($this->amazonSes == null) {
+    //         $this->amazonSes = new \AmazonSES(
+    //             $this->config->amazon->AWSAccessKeyId,
+    //             $this->config->amazon->AWSSecretKey
+    //         );
+    //         $this->amazonSes->disable_ssl_verification();
+    //     }
 
-        $response = $this->amazonSes->send_raw_email(array(
-            'Data' => base64_encode($raw)
-        ), array(
-            'curlopts' => array(
-                CURLOPT_SSL_VERIFYHOST => 0,
-                CURLOPT_SSL_VERIFYPEER => 0
-            )
-        ));
+    //     $response = $this->amazonSes->send_raw_email(array(
+    //         'Data' => base64_encode($raw)
+    //     ), array(
+    //         'curlopts' => array(
+    //             CURLOPT_SSL_VERIFYHOST => 0,
+    //             CURLOPT_SSL_VERIFYPEER => 0
+    //         )
+    //     ));
 
-        if (!$response->isOK()) {
-            throw new Exception('Error sending email from AWS SES: ' . $response->body->asXML());
-        }
+    //     if (!$response->isOK()) {
+    //         throw new Exception('Error sending email from AWS SES: ' . $response->body->asXML());
+    //     }
 
-        return true;
-    }
+    //     return true;
+    // }
 
     /**
      * Applies a template to be used in the e-mail

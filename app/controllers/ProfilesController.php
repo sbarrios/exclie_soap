@@ -20,6 +20,15 @@ class ProfilesController extends ControllerBase
     public function initialize()
     {
         $this->view->setTemplateBefore('private');
+
+        $titulo_cabecera = "Perfiles";
+        $sub_titulo = "";
+        $this->view->setVars(
+            array(
+                'titulo'   => $titulo_cabecera,
+                'sub_titulo' => $sub_titulo                
+            )
+        );
     }
 
     /**

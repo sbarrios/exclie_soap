@@ -1,22 +1,30 @@
 <?php
 namespace Vokuro\Controllers;
 
-use Vokuro\Forms\PacientesForm;
-use Vokuro\Models\Municipios;
-use Phalcon\Mvc\View;
+use Phalcon\Tag;
 use Phalcon\Mvc\Model\Criteria;
+use Phalcon\Paginator\Adapter\Model as Paginator;
+use Vokuro\Forms\PacientesForm;
+use Vokuro\Models\Pacientes;
+use Vokuro\Models\Municipios;
 
 /**
- * Display the default index page.
+ * Vokuro\Controllers\PacientesController
+ * CRUD to manage pacientes
  */
 class PacientesController extends ControllerBase
 {
+    /**
+     * Default action. Set the private (authenticated) layout (layouts/private.volt)
+     */
 	public function initialize()
     {
-        if ($this->session->has('auth-identity')) {
+      if ($this->session->has('auth-identity')) {
+            
             $this->view->setTemplateBefore('private');
+            
             $titulo_cabecera = "Pacientes";
-            $sub_titulo = "Agregar Paciente";
+            $sub_titulo = "Alta de Paciente";
             $this->view->setVars(
                 array(
                     'titulo'   => $titulo_cabecera,
@@ -24,24 +32,24 @@ class PacientesController extends ControllerBase
                 )
             );
         }
-       
-       
     }
-   
+
+    /**
+     * Default action, shows the search form
+     */
     public function indexAction()
-    {   
-       
-        $this->persistent->conditions = null;
+    {
+       $this->view->setTemplateBefore('private');
+        //$this->persistent->conditions = null;
         $this->view->form = new PacientesForm();
-        
     }
 
     public function searchAction()
     {   
+        $this->view->disable();
+
         $resData = array();
 
-        $this->view->disable();
-        
         $id = $this->request->getPost("estado_id");
 
         $data = Municipios::find(array(
@@ -55,7 +63,9 @@ class PacientesController extends ControllerBase
             $resData[] = array("ID"=>$result->ID, "NOMBRE"=>$result->NOMBRE);
         }
 
-        echo json_encode($resData);
-        
+       echo json_encode($resData);
+       
     }
+         
+        
 }

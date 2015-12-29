@@ -1,4 +1,3 @@
-<?php echo $this->tag->stylesheetLink('public/downloads/css/dropzone.css'); ?>
 <div id="wizard" class="form_wizard wizard_horizontal">
     <ul class="wizard_steps">
         <li>
@@ -9,27 +8,27 @@
         </li>
         <li>
             <a href="#step-2">
-                <span class="step_no">3</span>
-                <span class="step_descr">Paso 3<br /><small>Añadir Foto</small></span>
+                <span class="step_no">2</span>
+                <span class="step_descr">Paso 2<br /><small>Añadir Foto</small></span>
             </a>
         </li>
          <li>
             <a href="#step-3">
-                <span class="step_no">2</span>
-                <span class="step_descr">Paso 2<br /><small>Antecedentes</small></span>
+                <span class="step_no">3</span>
+                <span class="step_descr">Paso 3<br /><small>Antecedentes</small></span>
             </a>
         </li>
     </ul>
-    
     <div id="step-1">
         <div class="col-md-12">
             <form method="post" id="pacForm">
             <br>
                 <div class="row">
                     <div class="form-group col-md-3">
-                    <label for="nombre">Nombre</label>
+                    
                         <?php echo $form->label('nombre', array('class' => 'control-label')); ?>
-                        <?php echo $form->render('nombre', array('class' => 'form-control')); ?> 
+                        <?php echo $form->render('nombre', array('class' => 'form-control')); ?>
+                        
                     </div>
                     <div class="form-group col-md-3">
                         <?php echo $form->label('apellido_paterno', array('class' => 'control-label')); ?>
@@ -216,14 +215,13 @@
         </form>
     </div>
 </div>
+
 <!-- wizard -->
 <?php echo $this->tag->javascriptInclude('public/Smart-Wizard/js/jquery.smartWizard.js'); ?>
 <!-- DropZone -->
 <?php echo $this->tag->javascriptInclude('public/downloads/dropzone.js'); ?> 
 
-        
-
-    <script type="text/javascript">
+<script>
         $(document).ready(function () {
             // Smart Wizard     
             $('#wizard').smartWizard({ 
@@ -231,7 +229,7 @@
                 labelPrevious:'Atrás',
                 labelFinish:'Terminar',
                 hideButtonsOnDisabled: true,
-                onFinish:onFinishCallback
+                onFinish: onFinishCallback
             });
 
             function onFinishCallback() {
@@ -242,52 +240,32 @@
                 console.log('Forma 2 '+formData2);
             }
 
-            // Smart Wizard 
             $('#wizard_verticle').smartWizard({
                 transitionEffect: 'slide'
             });
-            // Mascaras
+
             $(":input").inputmask();
 
-           $("#Estados").change(function(event){
+            $("#Estados").change(function(event){
                 var value = $(this).val();
                 var getResultsUrl = 'pacientes/search';    
-                console.log(value);
                 $.ajax({
                     type: "POST",
                     url: getResultsUrl,
                     data: {"estado_id": value},
-                    success: function(response){                    
+                   
+                    success: function(data){      
+                        //console.log(response);               
                         $("#Municipios").empty();
-                        parsed = $.parseJSON(response);
+                        parsed = $.parseJSON(data);
                         $.each(parsed, function(){
                            $("#Municipios").append('<option value="'+ this.ID +'">'+ this.NOMBRE +'</option>');
                         });  
-                        console.log(response);               
+                                      
                     }
                 });
             });
 
-
-
         });
 
-        function irAntes(data) {
-            var datos = {idPac:data};
-            $.ajax({
-                    type: "POST",
-                    url: "<?php echo $this->basePath() ?>/pacientes/antecedentes",
-                     data: datos,
-                    dataType: "html",
-                    success: function(data) {
-                       $("#step2").html(data);   
-                    },
-                    error: function(){
-                          alert('Ocurrió un error, inténtelo más tarde.');
-                    }
-            });
-        }
-    
     </script>
-
-       

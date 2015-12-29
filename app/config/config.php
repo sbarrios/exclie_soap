@@ -7,7 +7,7 @@ return new \Phalcon\Config(array(
         'host' => '127.0.0.1',
         'username' => 'root',
         'password' => '',
-        'dbname' => 'exclie_phal',
+        'dbname' => 'exclie_soap',
         'charset'     => 'utf8',
     ),
     'application' => array(
@@ -19,7 +19,7 @@ return new \Phalcon\Config(array(
         'pluginsDir' => APP_DIR . '/plugins/',
         'cacheDir' => APP_DIR . '/cache/',
         'baseUri' => '/exclie_soap/',
-        //'publicUrl' => 'vokuro',
+        'publicUrl' => 'exclie_soap',
         'cryptSalt' => 'eEAfR|_&G&f,+vU]:jFr!!A&+71w1Ms9~8_4L!<@[N@DyaIP_2My|:+.u>/6m,$D'
     ),
     //  'application' => array(
@@ -34,18 +34,19 @@ return new \Phalcon\Config(array(
     //     'baseUri'        => '/exclie_alfa/',
     // ),
     'mail' => array(
-        'fromName' => 'Voku',
-        'fromEmail' => '',
+        'fromName' => 'Exclie',
+        'fromEmail' => 'soheil.barrios@gmail.com',
         'smtp' => array(
             'server' => 'smtp.gmail.com',
-            'port' => 587,
-            'security' => 'tls',
+           // 'port' => 587,
+             'port' => 465,
+            'security' => 'ssl',
             'username' => '',
-            'password' => ''
+            'password' => '',
         )
     ),
-    'amazon' => array(
-        'AWSAccessKeyId' => '',
-        'AWSSecretKey' => ''
-    )
+    // 'amazon' => array(
+    //     'AWSAccessKeyId' => '',
+    //     'AWSSecretKey' => ''
+    // )
 ));

@@ -16,7 +16,8 @@ use Phalcon\Forms\Form,
     Vokuro\Models\Religiones,
     Vokuro\Models\Viviendas,
     Vokuro\Models\Gruposetnicos,
-    Vokuro\Models\Tipossanguineos;
+    Vokuro\Models\Tipossanguineos,
+    Vokuro\Models\Profiles; 
 
 class PacientesForm extends Form
 {
@@ -180,6 +181,7 @@ class PacientesForm extends Form
                         'NOMBRE'
                     )
                 )
+
             )
         );
 
@@ -234,6 +236,7 @@ class PacientesForm extends Form
                         'ID',
                         'NOMBRE'
                     )
+
                 )
             )
         );
