@@ -1,5 +1,4 @@
-
-    <div class="row">
+    <!-- <div class="row">
         <div class="form-element col-md-4">
             <label>Agenda para el doctor:</label>
             <select class="form-control dropdown" id="sDoctor" onchange="crearcalendario()">
@@ -8,7 +7,7 @@
                 <?php } ?>
             </select>
         </div>
-    </div>
+    </div> -->
     <br>
     <div class="row">
         <div class="col-md-12">

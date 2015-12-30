@@ -39,8 +39,7 @@ class PacientesController extends ControllerBase
      */
     public function indexAction()
     {
-       $this->view->setTemplateBefore('private');
-        //$this->persistent->conditions = null;
+        
         $this->view->form = new PacientesForm();
     }
 
@@ -52,19 +51,21 @@ class PacientesController extends ControllerBase
 
         $id = $this->request->getPost("estado_id");
 
-        $data = Municipios::find(array(
-            "columns"   =>  array("ID, NOMBRE"),
-            "conditions"=>  "ESTADO_id = :id:",
-            "bind"      =>  array("id"=>$id)
-        ));
+        // $data = Municipios::find(array(
+        //     "columns"   =>  array("ID, NOMBRE"),
+        //     "conditions"=>  "ESTADO_id = :id:",
+        //     "bind"      =>  array("id"=>$id)
+        // ));
+
+        $data = Municipios::find(array("is_active = 1","ESTADO_id = ".$id));
 
 
         foreach ($data as $result) {
             $resData[] = array("ID"=>$result->ID, "NOMBRE"=>$result->NOMBRE);
         }
 
-       echo json_encode($resData);
-       
+        echo json_encode(array('data'=>$resData));
+        exit;
     }
          
         

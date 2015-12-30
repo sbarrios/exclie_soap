@@ -16,8 +16,8 @@ use Phalcon\Forms\Form,
     Vokuro\Models\Religiones,
     Vokuro\Models\Viviendas,
     Vokuro\Models\Gruposetnicos,
-    Vokuro\Models\Tipossanguineos,
-    Vokuro\Models\Profiles; 
+    Vokuro\Models\Tipossanguineos;
+    
 
 class PacientesForm extends Form
 {

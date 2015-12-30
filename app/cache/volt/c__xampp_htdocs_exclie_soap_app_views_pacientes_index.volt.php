@@ -249,18 +249,19 @@
             $("#Estados").change(function(event){
                 var value = $(this).val();
                 var getResultsUrl = 'pacientes/search';    
+                console.log(value);
                 $.ajax({
                     type: "POST",
                     url: getResultsUrl,
                     data: {"estado_id": value},
-                   
+                    
                     success: function(data){      
-                        //console.log(response);               
-                        $("#Municipios").empty();
-                        parsed = $.parseJSON(data);
-                        $.each(parsed, function(){
-                           $("#Municipios").append('<option value="'+ this.ID +'">'+ this.NOMBRE +'</option>');
-                        });  
+                        console.log(data);               
+                        // $("#Municipios").empty();
+                        // parsed = $.parseJSON(data);
+                        // $.each(parsed, function(){
+                        //    $("#Municipios").append('<option value="'+ this.ID +'">'+ this.NOMBRE +'</option>');
+                        // });  
                                       
                     }
                 });

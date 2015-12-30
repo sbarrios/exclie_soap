@@ -8,7 +8,7 @@
           <p>Agenda</p>
         </div>
         <div class="icon">
-          <i class="ion ion-ios-calendar-outline"></i>
+          <i class="ion ion-ios-calendar-outline"></i> 
         </div>
         <a href="agenda" class="small-box-footer"> <i class="fa fa-arrow-circle-right"></i></a>
       </div>
