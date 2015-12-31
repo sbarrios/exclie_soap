@@ -35,15 +35,16 @@ class PacientesController extends ControllerBase
     }
 
     /**
-     * Default action, shows the search form
+     * Default action, shows the index form
      */
     public function indexAction()
     {
-        
+        $this->tag->setDefault("Estados", '8');
+        $this->tag->setDefault("Municipios", '233');
         $this->view->form = new PacientesForm();
     }
 
-    public function searchAction()
+    public function traemunicipiosAction()
     {   
         $this->view->disable();
 
@@ -51,21 +52,22 @@ class PacientesController extends ControllerBase
 
         $id = $this->request->getPost("estado_id");
 
-        // $data = Municipios::find(array(
-        //     "columns"   =>  array("ID, NOMBRE"),
-        //     "conditions"=>  "ESTADO_id = :id:",
-        //     "bind"      =>  array("id"=>$id)
-        // ));
-
-        $data = Municipios::find(array("is_active = 1","ESTADO_id = ".$id));
-
+        $data = Municipios::find(array(
+            "columns"   =>  array("ID, NOMBRE"),
+            "conditions"=>  "ESTADO_id = :id:",
+            "bind"      =>  array("id"=>$id)
+        ));
 
         foreach ($data as $result) {
             $resData[] = array("ID"=>$result->ID, "NOMBRE"=>$result->NOMBRE);
         }
+        
+        echo json_encode($resData);
+        
+    }
 
-        echo json_encode(array('data'=>$resData));
-        exit;
+    public function unoAction(){
+       
     }
          
         

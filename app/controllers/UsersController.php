@@ -8,6 +8,7 @@ use Phalcon\Paginator\Adapter\Model as Paginator;
 use Vokuro\Forms\ChangePasswordForm;
 use Vokuro\Forms\UsersForm;
 use Vokuro\Models\PasswordChanges;
+use Vokuro\Models\Users;
 
 /**
  * Vokuro\Controllers\UsersController

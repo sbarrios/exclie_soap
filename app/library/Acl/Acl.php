@@ -52,7 +52,9 @@ class Acl extends Component
             'index'
         ),
         'pacientes' => array(
-            'index'
+            'index',
+            'traemunicipios',
+            'uno'
         ),
         'permissions' => array(
             'index'
